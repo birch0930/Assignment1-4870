@@ -12,4 +12,8 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
+    protected void print_Click(object sender, ImageClickEventArgs e)
+    {
+
+    }
 }
