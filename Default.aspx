@@ -32,7 +32,7 @@
             </div>
             <div style="vertical-align: top; ">
                 <asp:TextBox ID="keyword" runat="server"  Width="50%" Wrap="False" Height="25px" ></asp:TextBox>
-                <asp:Button ID="search" runat="server" Text="Search" CssClass="button" />
+                <asp:Button ID="search" runat="server" Text="Search" CssClass="button" OnClick="search_Click" />
                 <asp:ImageButton ID="head" runat="server" ImageUrl="~/Img/leftend.jpg" />
                 <asp:ImageButton ID="prev" runat="server" ImageUrl="~/Img/l.jpg" />
                 <asp:ImageButton ID="next" runat="server" ImageUrl="~/Img/r.jpg" />
@@ -41,7 +41,7 @@
             <asp:Label ID="filename" runat="server" BackColor="#B7E8FF" Width="55%"></asp:Label>
             <asp:Label ID="range" runat="server" BackColor="#B7E8FF" Width="10%"></asp:Label>
             <br />
-            <textarea id="content" name="S1" style="float: left; height: auto; width: 80%;"></textarea>
+            &nbsp;<asp:TextBox ID="tbContent" runat="server" Height="245px" TextMode="MultiLine" Width="671px"></asp:TextBox>
 
             <div style="float: left; margin-left: 5%; padding: 5px;">
                 <asp:ImageButton ID="print" runat="server" Style="margin: 10px;" ImageUrl="~/Img/printer.jpg" OnClick="print_Click" />
