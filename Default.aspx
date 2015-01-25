@@ -33,9 +33,9 @@
             <div style="vertical-align: top; ">
                 <asp:TextBox ID="keyword" runat="server"  Width="50%" Wrap="False" Height="25px" ></asp:TextBox>
                 <asp:Button ID="search" runat="server" Text="Search" CssClass="button" OnClick="search_Click" />
-                <asp:ImageButton ID="head" runat="server" ImageUrl="~/Img/leftend.jpg" />
-                <asp:ImageButton ID="prev" runat="server" ImageUrl="~/Img/l.jpg" />
-                <asp:ImageButton ID="next" runat="server" ImageUrl="~/Img/r.jpg" />
+                <asp:ImageButton ID="head" runat="server" ImageUrl="~/Img/leftend.jpg" OnClick="head_Click" />
+                <asp:ImageButton ID="prev" runat="server" ImageUrl="~/Img/l.jpg" OnClick="prev_Click" />
+                <asp:ImageButton ID="next" runat="server" ImageUrl="~/Img/r.jpg" OnClick="next_Click" />
                 <asp:ImageButton ID="end" runat="server" ImageUrl="~/Img/rd.jpg" />
             </div>
             <asp:Label ID="filename" runat="server" BackColor="#B7E8FF" Width="55%"></asp:Label>
