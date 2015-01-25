@@ -18,9 +18,6 @@ public class Utils
 
     public static string GetUploadsPhysicalDirectory()
     {
-        //string uploadDir = ConfigurationManager.AppSettings["uploadDir"];
-        //string physicalDir = HttpContext.Current.Server.MapPath("/SearchStar/files/");
-        //return physicalDir + uploadDir;
         string physicalDir = HttpContext.Current.Server.MapPath("~/SearchStar/files/");
         return physicalDir;
     }
