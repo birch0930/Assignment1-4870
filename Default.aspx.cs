@@ -50,14 +50,22 @@ public partial class _Default : System.Web.UI.Page
                 Utils.IncreaseTotalCounter();
             }
         }
-
+        if (Utils.GetTotalCounter() > 0)
+        {
             string displayContent = File.ReadAllText(files[currentFiles[Utils.GetCurrentCounter()]]);
 
             tbContent.Text = displayContent;
             filename.Text = files[currentFiles[Utils.GetCurrentCounter()]];
             range.Text = "Result " + (Utils.GetCurrentCounter() + 1) + " of " + Utils.GetTotalCounter();
             Utils.SetArray(currentFiles);
-            //return;
+        }
+        else
+        {
+            tbContent.Text = null;
+            filename.Text = "No Contents Found";
+            range.Text = null;
+        }
+
   
     }
     protected void next_Click(object sender, ImageClickEventArgs e)
@@ -88,6 +96,22 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void head_Click(object sender, ImageClickEventArgs e)
     {
+        currentFiles = Utils.GetArray();
+        Utils.SetCurrentCounter(0);
+        string displayContent = File.ReadAllText(files[currentFiles[Utils.GetCurrentCounter()]]);
 
+        tbContent.Text = displayContent;
+        filename.Text = files[currentFiles[Utils.GetCurrentCounter()]];
+        range.Text = "Result " + (Utils.GetCurrentCounter() + 1) + " of " + Utils.GetTotalCounter();
+    }
+    protected void end_Click(object sender, ImageClickEventArgs e)
+    {
+        currentFiles = Utils.GetArray();
+        Utils.SetCurrentCounter(Utils.GetTotalCounter() - 1);
+        string displayContent = File.ReadAllText(files[currentFiles[Utils.GetCurrentCounter()]]);
+
+        tbContent.Text = displayContent;
+        filename.Text = files[currentFiles[Utils.GetCurrentCounter()]];
+        range.Text = "Result " + (Utils.GetCurrentCounter() + 1) + " of " + Utils.GetTotalCounter();
     }
 }

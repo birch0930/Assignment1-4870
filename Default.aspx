@@ -36,7 +36,7 @@
                 <asp:ImageButton ID="head" runat="server" ImageUrl="~/Img/leftend.jpg" OnClick="head_Click" />
                 <asp:ImageButton ID="prev" runat="server" ImageUrl="~/Img/l.jpg" OnClick="prev_Click" />
                 <asp:ImageButton ID="next" runat="server" ImageUrl="~/Img/r.jpg" OnClick="next_Click" />
-                <asp:ImageButton ID="end" runat="server" ImageUrl="~/Img/rd.jpg" />
+                <asp:ImageButton ID="end" runat="server" ImageUrl="~/Img/rd.jpg" OnClick="end_Click" />
             </div>
             <asp:Label ID="filename" runat="server" BackColor="#B7E8FF" Width="55%"></asp:Label>
             <asp:Label ID="range" runat="server" BackColor="#B7E8FF" Width="10%"></asp:Label>
