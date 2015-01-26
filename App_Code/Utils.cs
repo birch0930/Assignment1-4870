@@ -32,6 +32,12 @@ public class Utils
         return physicalDir;
     }
 
+    public static string GetExclusionPhysicalDirectory()
+    {
+        string physicalDir = HttpContext.Current.Server.MapPath("~/SearchStar/exclusion/");
+        return physicalDir;
+    }
+
     public static void SetArray(int[] newArray)
     {
         array = newArray;

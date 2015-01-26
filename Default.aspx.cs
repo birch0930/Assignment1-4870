@@ -16,6 +16,7 @@ using System.Windows;
 public partial class _Default : System.Web.UI.Page
 {
     private string[] files = Directory.GetFiles(Utils.GetUploadsPhysicalDirectory());
+    private string[] exclusionFile = Directory.GetFiles(Utils.GetExclusionPhysicalDirectory());
     private int[] currentFiles = new int[20]; //Remove magic number later
     string stringToPrint = null;
 
@@ -30,6 +31,7 @@ public partial class _Default : System.Web.UI.Page
     {
         Utils.Reset();
         string[] searchWords = keyword.Text.ToString().Trim().Split(' ');
+        string exclusionWords = File.ReadAllText(exclusionFile[0]);
         bool isDisplay = false;
 
         for (int i = 0; i < files.Length; i++)
@@ -38,7 +40,7 @@ public partial class _Default : System.Web.UI.Page
 
             for (int j = 0; j < searchWords.Length; j++)
             {
-                if (contents.Contains(searchWords[j]))
+                if (contents.Contains(searchWords[j]) && !exclusionWords.Contains(searchWords[j]))
                 {
                     isDisplay = true;
                     break;
