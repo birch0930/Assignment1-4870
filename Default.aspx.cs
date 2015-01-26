@@ -88,6 +88,8 @@ public partial class _Default : System.Web.UI.Page
         }
 
         Utils.SetSelected(); // Sets flag so that navigation buttons can be used
+        head.Enabled = false;
+        prev.Enabled = false;
     }
     protected void next_Click(object sender, ImageClickEventArgs e)
     {
@@ -100,6 +102,12 @@ public partial class _Default : System.Web.UI.Page
             tbContent.Text = displayContent;
             filename.Text = "Document:" + Path.GetFileName(files[currentFiles[Utils.GetCurrentCounter()]]);
             range.Text = "Result " + (Utils.GetCurrentCounter() + 1) + " of " + Utils.GetTotalCounter();
+        }
+
+        if ((Utils.GetCurrentCounter() + 1) == Utils.GetTotalCounter())
+        {
+            next.Enabled = false;
+            end.Enabled = false;
         }
     }
     protected void prev_Click(object sender, ImageClickEventArgs e)
@@ -114,6 +122,12 @@ public partial class _Default : System.Web.UI.Page
             filename.Text = "Document:" + Path.GetFileName(files[currentFiles[Utils.GetCurrentCounter()]]);
             range.Text = "Result " + (Utils.GetCurrentCounter() + 1) + " of " + Utils.GetTotalCounter();
         }
+
+        if ((Utils.GetCurrentCounter() + 1) == 1)
+        {
+            prev.Enabled = false;
+            head.Enabled = false;
+        }
     }
     protected void head_Click(object sender, ImageClickEventArgs e)
     {
@@ -124,6 +138,10 @@ public partial class _Default : System.Web.UI.Page
         tbContent.Text = displayContent;
         filename.Text = "Document:" + Path.GetFileName(files[currentFiles[Utils.GetCurrentCounter()]]);
         range.Text = "Result " + (Utils.GetCurrentCounter() + 1) + " of " + Utils.GetTotalCounter();
+
+        head.Enabled = false;
+        prev.Enabled = false;
+
     }
     protected void end_Click(object sender, ImageClickEventArgs e)
     {
@@ -134,6 +152,9 @@ public partial class _Default : System.Web.UI.Page
         tbContent.Text = displayContent;
         filename.Text = "Document:" + Path.GetFileName(files[currentFiles[Utils.GetCurrentCounter()]]);
         range.Text = "Result " + (Utils.GetCurrentCounter() + 1) + " of " + Utils.GetTotalCounter();
+
+        next.Enabled = false;
+        end.Enabled = false;
     }
     protected void save_Click(object sender, ImageClickEventArgs e)
     {
