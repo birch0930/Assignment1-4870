@@ -26,7 +26,7 @@
     <form id="form1" runat="server">
         <div>
             <div>
-                <asp:Label ID="logo" Style="text-align: center;" runat="server" Text="Logo" BackColor="#3399FF" Font-Bold="True" ForeColor="White" Height="30px" Width="30%" Font-Size="X-Large"></asp:Label>
+                <asp:Label ID="logo" Style="text-align: center;" runat="server" Text="BCIT SearchStar" BackColor="#3399FF" Font-Bold="True" ForeColor="White" Height="30px" Width="30%" Font-Size="X-Large"></asp:Label>
                 <br />
 
             </div>
@@ -41,13 +41,13 @@
             <asp:Label ID="filename" runat="server" BackColor="#B7E8FF" Width="55%"></asp:Label>
             <asp:Label ID="range" runat="server" BackColor="#B7E8FF" Width="10%"></asp:Label>
             <br />
-            &nbsp;<asp:TextBox ID="tbContent" runat="server" Height="245px" TextMode="MultiLine" Width="671px"></asp:TextBox>
+            &nbsp;<asp:TextBox ID="tbContent" style="float:left; width:80%" runat="server" Height="245px" TextMode="MultiLine" Width="671px"></asp:TextBox>
 
             <div style="float: left; margin-left: 5%; padding: 5px;">
                 <asp:ImageButton ID="print" runat="server" Style="margin: 10px;" ImageUrl="~/Img/printer.jpg" OnClick="print_Click" />
 
                 <br />
-                <asp:ImageButton ID="save" runat="server" Style="margin: 10px;" ImageUrl="~/Img/save.png" />
+                <asp:ImageButton ID="save" runat="server" Style="margin: 10px;" ImageUrl="~/Img/save.png" OnClick="save_Click" />
             </div>
         </div>
     </form>
