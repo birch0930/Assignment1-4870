@@ -12,6 +12,8 @@ public class Utils
     private static int[] array = new int[20];
     private static int totalCounter = 0;
     private static int currentCounter = 0;
+    private static bool isSelected = false;
+
 	public Utils()
 	{
 		//
@@ -76,6 +78,16 @@ public class Utils
     public static int GetCurrentCounter()
     {
         return currentCounter;
+    }
+
+    public static void SetSelected()
+    {
+        isSelected = true;
+    }
+
+    public static bool GetSelected()
+    {
+        return isSelected;
     }
 
 }

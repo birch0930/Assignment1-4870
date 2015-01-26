@@ -22,7 +22,22 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        string[] searchWords = keyword.Text.ToString().Trim().Split(' ');
 
+        if (searchWords[0] == "" && !Utils.GetSelected())
+        {
+            next.Enabled = false;
+            prev.Enabled = false;
+            head.Enabled = false;
+            end.Enabled = false;
+        }
+        else
+        {
+            next.Enabled = true;
+            prev.Enabled = true;
+            head.Enabled = true;
+            end.Enabled = true;
+        }
     }
 
 
@@ -71,8 +86,8 @@ public partial class _Default : System.Web.UI.Page
             filename.Text = "No Contents Found";
             range.Text = null;
         }
-      
 
+        Utils.SetSelected(); // Sets flag so that navigation buttons can be used
     }
     protected void next_Click(object sender, ImageClickEventArgs e)
     {
