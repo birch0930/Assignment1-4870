@@ -21,6 +21,22 @@
        
        
     </style>
+
+    <script type="text/javascript" language="javascript">
+        function CallPrint(strid)
+        {
+            var prtContent = document.getElementById(strid);
+            var docwrite=prtContent.innerHTML;
+            var WinPrint = window.open('','','left=0,top=0,toolbar=0,status=0');
+           // WinPrint.document.open();
+            WinPrint.document.write(docwrite);       
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            WinPrint.close();
+//          prtContent.innerHTML=strOldOne;
+        }
+        </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -44,7 +60,7 @@
             &nbsp;<asp:TextBox ID="tbContent" style="float:left; width:80%" runat="server" Height="245px" TextMode="MultiLine" Width="671px"></asp:TextBox>
 
             <div style="float: left; margin-left: 5%; padding: 5px;">
-                <asp:ImageButton ID="print" runat="server" Style="margin: 10px;" ImageUrl="~/Img/printer.jpg" OnClick="print_Click" />
+                <img   style="margin: 10px;" onclick="javascript:CallPrint('tbContent')" src="Img/printer.jpg" />
 
                 <br />
                 <asp:ImageButton ID="save" runat="server" Style="margin: 10px;" ImageUrl="~/Img/save.png" OnClick="save_Click" />
