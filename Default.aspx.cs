@@ -55,14 +55,18 @@ public partial class _Default : System.Web.UI.Page
 
             for (int j = 0; j < searchWords.Length; j++)
             {
-                if (contents.Contains(searchWords[j]) && !exclusionWords.Contains(searchWords[j]))
+                if (exclusionWords.Contains(searchWords[j]))
+                {
+                    continue;
+                }
+                else if (contents.Contains(searchWords[j]))
                 {
                     isDisplay = true;
-                    break;
                 }
                 else
                 {
                     isDisplay = false;
+                    break;
                 }
             }
             if (isDisplay)
@@ -90,6 +94,12 @@ public partial class _Default : System.Web.UI.Page
         Utils.SetSelected(); // Sets flag so that navigation buttons can be used
         head.Enabled = false;
         prev.Enabled = false;
+
+        if (Utils.GetTotalCounter() == 1)
+        {
+            next.Enabled = false;
+            end.Enabled = false;
+        }
     }
     protected void next_Click(object sender, ImageClickEventArgs e)
     {
